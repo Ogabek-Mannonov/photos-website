@@ -1,42 +1,191 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* src/App.css */
+
+/* Asosiy fon va shrift */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Asosiy konteyner */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+/* Sarlavhalar */
+h2 {
   text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  color: #e0e0e0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Input elementlar */
+.input-field {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 15px 0 25px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: background 0.3s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.input-field::placeholder {
+  color: #ddd;
+}
+
+.input-field:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Tugmalar */
+.btn {
+  background: #6a11cb;
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  border: none;
+  padding: 14px 32px;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.4s ease;
+  box-shadow: 0 5px 15px rgba(101, 67, 232, 0.4);
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  box-shadow: 0 8px 20px rgba(101, 67, 232, 0.7);
+}
+
+/* Logout tugmasi */
+.logout-btn {
+  background: #e63946;
+  margin-bottom: 25px;
+  float: right;
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.5);
+}
+
+.logout-btn:hover {
+  background: #f44336;
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.8);
+}
+
+/* Rasm kartochkasi */
+.image-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.02);
+}
+
+/* Rasm */
+.uploaded-image {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Sarlavha rasm ustida */
+.image-card p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #f1f1f1;
+}
+
+/* Like va Delete tugmalari */
+.like-btn {
+  background: #00b894;
+  box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
+  margin-right: 10px;
+}
+
+.like-btn:hover {
+  background: #019875;
+  box-shadow: 0 8px 20px rgba(0, 184, 148, 0.7);
+}
+
+.delete-btn {
+  background: #d63031;
+  box-shadow: 0 5px 15px rgba(214, 48, 49, 0.5);
+}
+
+.delete-btn:hover {
+  background: #b71c1c;
+  box-shadow: 0 8px 20px rgba(214, 48, 49, 0.8);
+}
+
+/* Commentlar bo‘limi */
+.comments-section {
+  margin-top: 20px;
+}
+
+.comment {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.comment b {
+  color: #81ecec;
+}
+
+.comment small {
+  float: right;
+  color: #b2bec3;
+  font-size: 0.8rem;
+}
+
+/* Comment yozish inputi va tugmasi */
+.comment-input {
+  width: 75%;
+  padding: 12px 18px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-right: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.comment-input::placeholder {
+  color: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 20px 15px;
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .comment-input {
+    width: 100%;
+    margin-bottom: 12px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

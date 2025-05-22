@@ -20,18 +20,21 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Rasm yuklash
+// Rasm yuklash (title bilan)
 router.post("/", authenticateToken, upload.single("image"), async (req, res) => {
   const userId = req.user.id;
-  if (!req.file)
+  const title = req.body.title || "Untitled";
+
+  if (!req.file) {
     return res.status(400).json({ message: "Image file is required" });
+  }
 
   const filePath = req.file.path;
 
   try {
     const newImage = await pool.query(
-      "INSERT INTO images (user_id, image_url, uploaded_at) VALUES ($1, $2, NOW()) RETURNING *",
-      [userId, filePath]
+      "INSERT INTO images (user_id, image_url, title, uploaded_at) VALUES ($1, $2, $3, NOW()) RETURNING *",
+      [userId, filePath, title]
     );
     res.status(201).json(newImage.rows[0]);
   } catch (error) {
