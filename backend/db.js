@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: 'postgres://postgres:12345abcd@db-postgres-xyz.render.com:5432/photoWebsite?sslmode=require',
   ssl: {
     rejectUnauthorized: false,
   },
