@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-const API_URL = 'http://51.21.245.98:4000/api'
+const API_URL = 'https://photos-website-4.onrender.com/api'
 
 export default function Login({ onLogin }) {
   const [username, setUsername] = useState("");
