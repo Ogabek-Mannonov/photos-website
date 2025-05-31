@@ -1,6 +1,4 @@
-const {Pool} = require('pg')
-
-
+const { Pool } = require('pg');
 
 const pool = new Pool({
   connectionString: 'postgres://postgres:12345abcd@db-postgres-xyz.render.com:5432/photoWebsite?sslmode=require',
@@ -9,4 +7,4 @@ const pool = new Pool({
   },
 });
 
-export default pool;
+module.exports = pool;
