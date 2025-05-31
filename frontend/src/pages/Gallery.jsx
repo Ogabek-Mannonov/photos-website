@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import jwtDecode from "jwt-decode"; // 3.1.2 versiyasi uchun oddiy import
+import jwtDecode from "jwt-decode";
 
-const API_URL = "http://localhost:4000/api";
+const API_URL = 'http://51.21.245.98:4000'
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export default function Gallery({ onLogout }) {
   const [images, setImages] = useState([]);
@@ -144,11 +145,11 @@ export default function Gallery({ onLogout }) {
       {images.map((img) => (
         <div key={img.id} className="image-card">
           <p>
-            <b>{img.title ? img.title : "Untitled"}</b> uploaded by{" "}
+            <b>{img.title || "Untitled"}</b> uploaded by{" "}
             <b>{img.username}</b> at {new Date(img.uploaded_at).toLocaleString()}
           </p>
           <img
-            src={`http://localhost:4000/${img.image_url.replace("\\", "/")}`}
+            src={`${BASE_URL}/${img.image_url.replace("\\", "/")}`}
             alt={img.title}
             className="uploaded-image"
           />

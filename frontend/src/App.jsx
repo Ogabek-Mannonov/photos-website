@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Gallery from "./pages/Gallery";
-import "./App.css"
+import "./App.css";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
