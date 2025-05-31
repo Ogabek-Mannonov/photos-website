@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 
-const API_URL = 'http://51.21.245.98:4000'
+const API_URL = 'http://51.21.245.98:4000/api'
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export default function Gallery({ onLogout }) {
